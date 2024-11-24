@@ -13,8 +13,13 @@ class ExampleEvent implements ShouldBroadcast
     use Dispatchable;
     use SerializesModels;
 
+    /**
+     * @param int $exampleVariable
+     * @param array<string, mixed>|null $rmqHeaders - Задает хедеры для сообщения в рэбите. Удаляются из payload
+     */
     public function __construct(
         public int $exampleVariable,
+        public ?array $rmqHeaders,
     ) {
     }
 

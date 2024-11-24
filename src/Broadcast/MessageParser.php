@@ -24,9 +24,11 @@ class MessageParser
      */
     public function __construct(private readonly string $eventName, array $payload)
     {
-        if (isset($payload['receiverId'])) {
-            $this->defaultHeaders['userId'] = $payload['receiverId'];
-            unset($payload['receiverId']);
+        if (isset($payload['rmqHeaders'])) {
+            foreach($payload['rmqHeaders'] as $key => $header) {
+                $this->defaultHeaders[$key] = $header;
+            }
+            unset($payload['rmqHeaders']);
         }
 
         $this->payloadString = json_encode($payload);
