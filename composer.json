@@ -1,6 +1,7 @@
 {
     "name": "sn1kers/laravel-rabbitmq",
     "type": "library",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Sn1KeRs\\LaravelRabbitmq\\": "src/"
