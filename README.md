@@ -5,11 +5,12 @@
     ```
     composer require sn1kers/laravel-rabbitmq
     ```
-2. Публикация файла конфига 
+2. Добавить провайдер в bootsrap/providers.php
+3. Публикация файла конфига 
     ```
     php artisan vendor:publish --provider="Sn1KeRs\LaravelRabbitmq\RabbitMQServiceProvider" --tag="config"
     ```
-3. Добавить в .env параметры и поменять под ваше подключение
+4. Добавить в .env параметры и поменять под ваше подключение
     ```
     RABBIT_MQ_HOST=127.0.0.1
     RABBIT_MQ_PORT=5672
